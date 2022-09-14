@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:JS代码;">点我一下</a>
+</body>
+
+</html>
+
+<script>
+    var test = "jss-test";
+    var test2 = new String("jss-test");
+    if (test == test2) {
+        window.alert("true");
+    }
+    else {
+        window.alert("false");
+    }
+    document.write(test.length);
+    var str = "这是String字符串的讲解";
+    var pos = str.indexOf("String", 4);
+    var pos2 = str.lastIndexOf("String");
+    document.write(pos);
+    document.write(pos2);
+    var str = "Apple, Banana, Mango";
+    var res = str.slice(7, 13);
+    //如果某个参数为负，则从字符串的结尾开始计数
+    var res2 = str.slice(-13, -7);
+    //如果省略第二个参数，则该方法将裁剪字符串的剩余部分
+    var res3 = str.slice(7);
+    //从结尾计数
+    var res = str.slice(-13);
+    document.write(res3);
+    var x = 10;
+    var y = "20";
+    var z = x + y;
+    document.write(z);
+    var list = ["Ace", "Tina", "Eleven"];
+    var str = list.toString();
+    console.log(str);
+</script>
