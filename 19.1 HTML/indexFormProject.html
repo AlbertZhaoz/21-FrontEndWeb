@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--input 输入表单元素 text password checkbox radio submit-->
+<!--select 下拉表单-->
+<!--textarea文本域-->
+
+<!--1. 表单域 form：提交区域内表单元素给后台服务器-->
+<!--2. 文件与 file: input type 属性值，使用场景上传文件-->
+<!--3. 文本域 textarea 可以输入多行文字，比如留言板、网站介绍。-->
+
+<!--查阅文档是一个非常好的学习习惯-->
+<!-- - W3School-->
+<!-- - MDN-->
+<label>青春纪念手册</label>
+<table  cellspacing="0">
+    <tr>
+        <td>性别:</td>
+        <td>
+            <!--radio单选按钮，可以实现复选按钮-->
+            <!--当name相同时候可以实现单选-->
+            <!--value是提交给后台的值-->
+            <input type="radio" name="性别" value="男">男
+            <input type="radio" name="性别" value="女">女
+        </td>
+    </tr>
+    <tr>
+        <td>所在地区:</td>
+        <td>
+            <select>
+                <option selected>上海</option>
+                <option>北京</option>
+                <option>南京</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>喜欢的类型：</td>
+        <td>
+            <input type="checkbox" name="love">A
+            <input type="checkbox" name="love">B
+            <input type="checkbox" name="love" checked="checked">C
+        </td>
+    </tr>
+    <tr>
+        <td>自我介绍：</td>
+        <td>
+            <textarea>个人介绍</textarea>
+        </td>
+    </tr>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="注册">
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type="checkbox" value="同意" checked="checked">同意注册条款
+            <a href="http://www.baidu.com"/>我是会员，立即登录
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <h5>我承诺</h5>
+            <ul>
+                <li>年满18</li>
+                <li>严肃的加入</li>
+                <li>真诚的加入</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
