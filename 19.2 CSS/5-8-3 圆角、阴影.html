@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    /*圆角*/
+    div{
+      border: 1px solid #ccc;
+      width: 248px;
+      height: 162px;
+      margin: 100px auto;
+      background-color: pink;
+      border-radius:10px;
+    }
+    /*圆形*/
+    .square{
+      height: 248px;
+      /*设置正方形为圆形 50%宽度和高度的一半，正好是圆半径为正方形的一半*/
+      border-radius: 50%;
+    }
+    /*圆角矩形*/
+    .square2{
+      border-radius: 81px;
+    }
+    /*不同圆角:左上 顺时针*/
+    .square3{
+      border-radius: 10% 20% 30% 40%;
+    }
+  </style>
+</head>
+<body>
+<!--CSS3中增加了圆角边框样式、盒子阴影和文字阴影样式-->
+<div></div>
+<div class="square"></div>
+<div class="square2"></div>
+<div class="square3"></div>
+</body>
+</html>
