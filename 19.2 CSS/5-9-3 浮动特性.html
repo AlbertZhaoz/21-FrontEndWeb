@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    h1{
+      font-size: 14px;
+    }
+
+    /*如果行内元素有了浮动，则不需要转换块级|行内块元素*/
+    /*就可以直接设置高度和宽度*/
+    span,div{
+        float: left;
+        width: 100px;
+        height: 100px;
+        font-size: 14px;
+        background-color: cornflowerblue;
+    }
+
+  </style>
+</head>
+<body>
+<h1>
+  1 浮动特性(重难点）：
+  <p>1. 浮动元素会脱离标准流（脱标）</p>
+  <p>2. 浮动元素会一行内顶部对齐方式来显示</p>
+  <p>3. 浮动元素会具有行内块元素的特性</p>
+</h1>
+<span>我是span1</span>
+<span>我是span2</span>
+<span>我是span3</span>
+<div>我是div</div>
+<h1>
+    2 为了约束浮动元素为止，我们网页布局一般采取的策略是：
+    <p>先用标准流的父元素排列上下位置</p>
+    <p>内部子元素采用浮动排列左右位置</p>
+</h1>
+</body>
+</html>

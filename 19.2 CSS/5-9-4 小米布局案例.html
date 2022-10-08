@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .box{
+      width: 1200px;
+      height: 460px;
+      background-color: pink;
+      /*居中显示*/
+      margin: 10px auto;
+    }
+
+    .left{
+      float: left;
+      width: 200px;
+      height: 460px;
+      background-color: purple;
+    }
+
+    .right{
+      float: left;
+      width: 1000px;
+      height: 460px;
+      background-color: cornflowerblue;
+    }
+
+    /*清除元素内外边距*/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li{
+      list-style: none;
+    }
+
+    .box2{
+      width: 1226px;
+      height: 285px;
+      background-color: pink;
+      margin: 20px auto;
+    }
+
+    .box2 li{
+      width: 296px;
+      height: 285px;
+      background-color: purple;
+      float: left;
+      margin-right: 14px;
+    }
+
+    /*这样直接写权重没有上面高*/
+    /*并不会生效*/
+    /*.last{*/
+    /*  margin-right: 0;*/
+    /*}*/
+    .box2 .last{
+      margin-right: 0 ;
+    }
+
+  </style>
+</head>
+<body>
+<div class="box">
+  <div class="left">我是左侧盒子</div>
+  <div class="right">我是右侧盒子</div>
+</div>
+
+<!--ul.box>li*4 按tab键自动生成-->
+<ul class="box2">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li class="last">4</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1 {
+            font-size: 14px;
+        }
+
+        div{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            border: 1px solid black;
+            /*元素左浮动 右浮动*/
+            float: left;
+        }
+
+        .left{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            border: 1px solid black;
+            /*元素左浮动 右浮动*/
+            float: left;
+        }
+
+        .right{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            border: 1px solid black;
+            /*元素左浮动 右浮动*/
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+<h1>
+  1. 浮动
+  <p>网页布局的本质-用CSS来摆放盒子</p>
+  <p>CSS提供了三种传统布局方式（盒子排列顺序）:</p>
+  <ul>
+    <li>普通流（标准流/文档流）：块内元素、行内元素（span a i em)、行内块元素</li>
+    <li>浮动</li>
+    <li>定位</li>
+  </ul>
+</h1>
+<h1>
+    2. 为什么需要浮动？
+    <p>浮动可以改变元素标签默认的排列方式</p>
+    <p>浮动最典型的应用：可以让多个块级元素一行内排列显示</p>
+    <p>实现行内块元素中间无缝隙、实现左右盒子对齐，左青龙右白虎</p>
+</h1>
+
+<div>1</div>
+<div>2</div>
+<div>3</div>
+
+<h1>
+    3. 网页布局第一准则：
+    <p>多个块级元素纵向排列找标准流</p>
+    <p>多个块级元素横向排列找浮动</p>
+    <div class="left">左青龙</div>
+    <div class="right">右白虎</div>
+</h1>
+</body>
+</html>
