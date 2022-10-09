@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        background-color: pink;
+        height: 615px;
+        width: 1226px;
+        margin: 0 auto;
+    }
+
+    .left {
+        float: left;
+        background-color: purple;
+        width: 234px;
+        height: 615px;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        /*background-position: center;*/
+        background-image: url("pic/img.png");
+    }
+
+    .right {
+        float: left;
+        background-color: grey;
+        width: 992px;
+        height: 615px;
+    }
+
+    /*先设置盒子大小，之后设置盒子位置*/
+    /*子代选择器，只选择亲儿子*/
+    .right > div {
+        height: 300px;
+        width: 234px;
+        float: left;
+        background-color: #fff;
+        margin-left: 14px;
+        margin-bottom: 14px;
+    }
+
+    .box > img {
+        width: 100%;
+        height: auto;
+    }
+
+    .review {
+        height: 50px;
+        font-size: 14px;
+        /*因为这个段落没有 width 属性，所以padding不会撑开盒子宽度*/
+        padding: 0 28px;
+        /*因为有 height 属性，所以不用 padding*/
+        margin-top: 10px;
+    }
+
+    .appraise {
+        font-size: 12px;
+        padding: 0 28px;
+        margin-top: 15px;
+    }
+
+    .info {
+        font-size: 14px;
+        margin-top: 15px;
+        padding: 0 28px;
+    }
+
+    .info h4 {
+        /*转换为 行内块，让其他行内元素可以在一排*/
+        display: inline-block;
+        /*设置文字宽度后可以取消加粗*/
+        font-weight: 400;
+    }
+
+    .info span {
+        color: #ff6700;
+    }
+
+    .info em {
+        /*让倾斜的文字不倾斜*/
+        font-style: normal;
+        color: #ebe4e0;
+        /*上右下左*/
+        margin: 0 6px 0 15px;
+    }
+
+    a {
+        color: #333;
+        /*让链接不含下划线*/
+        text-decoration: none;
+    }
+
+</style>
+<body>
+<div class="main">
+    <div class="left"></div>
+    <div class="right">
+        <div class="box">
+            <img src="pic/img.png" alt="我没有图片了">
+            <p class="review">快递牛，整体不错，蓝牙信号强啊。</p>
+            <div class="appraise">来自于 1214314 的评价</div>
+            <div class="info">
+                <h4><a href="">Redmi AirPos</a></h4>
+                <em>|</em>
+                <span>99.9 元</span>
+            </div>
+        </div>
+        <div class="box"><img src="pic/img.png" alt="我没有图片了">
+            <p class="review">快递牛，整体不错，蓝牙信号强啊。</p>
+            <div class="appraise">来自于 1214314 的评价</div>
+            <div class="info">
+                <h4><a href="">Redmi AirPos</a></h4>
+                <em>|</em>
+                <span>99.9 元</span>
+            </div>
+        </div>
+        <div class="box"><img src="pic/img.png" alt="我没有图片了">
+            <p class="review">快递牛，整体不错，蓝牙信号强啊。</p>
+            <div class="appraise">来自于 1214314 的评价</div>
+            <div class="info">
+                <h4><a href="">Redmi AirPos</a></h4>
+                <em>|</em>
+                <span>99.9 元</span>
+            </div>
+        </div>
+        <div class="box"><img src="pic/img.png" alt="我没有图片了">
+            <p class="review">快递牛，整体不错，蓝牙信号强啊。</p>
+            <div class="appraise">来自于 1214314 的评价</div>
+            <div class="info">
+                <h4><a href="">Redmi AirPos</a></h4>
+                <em>|</em>
+                <span>99.9 元</span>
+            </div>
+        </div>
+        <div class="box"><img src="pic/img.png" alt="我没有图片了">
+            <p class="review">快递牛，整体不错，蓝牙信号强啊。</p>
+            <div class="appraise">来自于 1214314 的评价</div>
+            <div class="info">
+                <h4><a href="">Redmi AirPos</a></h4>
+                <em>|</em>
+                <span>99.9 元</span>
+            </div>
+        </div>
+        <div class="box"><img src="pic/img.png" alt="我没有图片了">
+            <p class="review">快递牛，整体不错，蓝牙信号强啊。</p>
+            <div class="appraise">来自于 1214314 的评价</div>
+            <div class="info">
+                <h4><a href="">Redmi AirPos</a></h4>
+                <em>|</em>
+                <span>99.9 元</span>
+            </div>
+        </div>
+        <div class="box"><img src="pic/img.png" alt="我没有图片了">
+            <p class="review">快递牛，整体不错，蓝牙信号强啊。</p>
+            <div class="appraise">来自于 1214314 的评价</div>
+            <div class="info">
+                <h4><a href="">Redmi AirPos</a></h4>
+                <em>|</em>
+                <span>99.9 元</span>
+            </div>
+        </div>
+        <div class="box"><img src="pic/img.png" alt="我没有图片了">
+            <p class="review">快递牛，整体不错，蓝牙信号强啊。</p>
+            <div class="appraise">来自于 1214314 的评价</div>
+            <div class="info">
+                <h4><a href="">Redmi AirPos</a></h4>
+                <em>|</em>
+                <span>99.9 元</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
