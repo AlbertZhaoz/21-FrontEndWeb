@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+浮动布局注意点：
+1. 浮动和标准流的父盒子组合布局
+2. 标准流会独占一行，浮动的盒子只会影响之后的标准流。
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .top {
+        height: 50px;
+        background-color: gray;
+        margin: 5px;
+    }
+
+    .banner {
+        width: 75%;
+        height: 150px;
+        background-color: gray;
+        margin: 0 auto;
+    }
+
+    .box {
+        width: 75%;
+        height: 300px;
+        background-color: #1E9FFF;
+        margin: 10px auto;
+    }
+
+    .box li {
+        width: 25%;
+        height: 300px;
+        background-color: gray;
+        float: left;
+        background-image: url("pic/img.png");
+    }
+
+    .footer {
+        background-color: gray;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+</style>
+<body>
+<div class="top">top</div>
+<div class="banner">banner</div>
+<div class="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div class="footer">footer</div>
+</body>
+</html>
