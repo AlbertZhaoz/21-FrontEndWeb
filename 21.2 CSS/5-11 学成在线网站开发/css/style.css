@@ -5,7 +5,106 @@
 /*4. 其他属性(CSS3): content/cursor/border-radius/box-shadow/text-shadow/backgroud:linear-gradient...*/
 
 /*清除 body 的内外边距*/
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
+}
+
+/*我是版心，一版页面核心部分*/
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+/*去除无序列表小圆点*/
+li{
+    list-style: none;
+}
+
+/*去除链接下划线*/
+a{
+    text-decoration: none;
+}
+
+.header {
+    height: 42px;
+    /*此处会层叠 w 中的margin*/
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+}
+
+.nav{
+    float: left;
+    margin-left: 60px;
+}
+
+/*导航栏不需要给宽度，加浮动后，自动具有行内块元素特性*/
+/*能够撑开盒子*/
+.nav ul li{
+    float: left;
+    margin: 0 15px;
+}
+
+.nav ul li a{
+    display: block;
+    height: 42px;
+    /*内部padding撑开盒子，保持空隙*/
+    padding: 0 10px;
+    /*让文字垂直居中，和height一样高即可*/
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+
+/*当鼠标经过时，出现下边框和变色*/
+.nav ul li a:hover{
+    color: #00a4ff;
+    border-bottom: 2px solid #00a4ff;
+}
+
+.search{
+    float: left;
+    width: 412px;
+    height: 42px;
+    line-height: 42px;
+    margin-left: 50px;
+}
+
+.search input{
+    float: left;
+    width: 345px;
+    height: 40px;
+    border:1px solid #00a4ff;
+    /*清除右侧边框*/
+    border-right: none;
+    /*文本颜色和字体*/
+    color:#bfbfbf;
+    font-size: 14px;
+    /*将内部文字挤到右侧*/
+    padding-left:15px;
+}
+
+/*注意行内块之间会有缝隙,会把 search 挤下来
+浮动可以清除缝隙*/
+.search button{
+    float: left;
+    width: 50px;
+    height: 42px;
+    /*按钮 button 默认有个边框，需要去除掉。*/
+    border: 0;
+    background-image: url("../img/search.png");
+}
+
+.user{
+    float: right;
+    height: 42px;
+    line-height: 42px;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #666;
 }
