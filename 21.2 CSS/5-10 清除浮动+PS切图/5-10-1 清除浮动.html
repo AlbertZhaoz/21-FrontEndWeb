@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+为什么需要清除浮动？
+由于父级盒子很多情况下，不方便给高度，但是子盒子浮动又不占有位置，最后父级盒子高度为0时，就会影响下面的标准流盒子。
+
+清除浮动的本质？
+清除浮动造成的布局影响。
+clear:属性值（left right both),在实际开发中，基本只会用到 clear:both。
+清除浮动的策略是：闭合浮动
+
+清除浮动的方法：
+1. 额外标签法也称为隔墙法，是W3C推荐的做法，但是工作中不常用。
+隔墙标签必须是块级元素，不能是行内元素。(clear:both)
+2. 父级添加 overflow 属性，设置为 hidden/auto/scroll，可以清除外边距合并
+缺点：无法显示溢出的部分。
+3. 父级添加 after 伪元素
+结构更加简单，代表网站百度、淘宝、网易等
+4. 父级添加双伪元素
+结构更加简单，代表网站小米、腾讯等
+
+<style>
+    .box{
+        background-color: gray;
+    }
+    /*父级添加 after 伪元素*/
+    .clearfix:after{
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .clearfix{
+        /*IE6 7 专有语法*/
+        *zoom:1%;
+    }
+
+    /*父级添加双伪元素*/
+    /*.clearfix:before,*/
+    /*.clearfix:after{*/
+    /*    content: "";*/
+    /*    display: table;*/
+    /*}*/
+
+    /*.clearfix:after{*/
+    /*    clear: both;*/
+    /*}*/
+
+    /*.clearfix{*/
+    /*    *zoom:1%;*/
+    /*}*/
+
+    .damao{
+        background-color: pink;
+        height: 100px;
+        width: 100px;
+        margin: 10px;
+        float: left;
+    }
+
+    .ermao{
+        background-color: cadetblue;
+        height: 150px;
+        width: 200px;
+        margin: 10px;
+        float: left;
+    }
+
+    .sanmao{
+        background-color: cadetblue;
+        height: 300px;
+        width: 200px;
+        margin: 10px;
+        float: left;
+    }
+
+    .erdaye{
+        background-color: darkslategrey;
+        height: 400px;
+    }
+
+    .geqiangdaniu{
+        clear: both;
+    }
+</style>
+
+<div class="box clearfix">
+    <div class="damao"></div>
+    <div class="ermao"></div>
+    <div class="sanmao"></div>
+    <!--    隔墙打牛法-->
+    <div class="geqiangdaniu"></div>
+</div>
+<div class="erdaye">
+</div>
+</body>
+</html>
