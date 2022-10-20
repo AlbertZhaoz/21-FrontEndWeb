@@ -245,3 +245,126 @@ a{
     font-size: 14px;
     color: #004aff;
 }
+
+.box{
+    margin-top: 30px;
+}
+
+.box-hd{
+    height: 45px;
+}
+
+.box-hd h3{
+    float: left;
+    line-height: 45px;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box-hd a{
+    float: right;
+    line-height: 45px;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-right: 5px;
+}
+
+/*把 li 的父亲 ul 修改的足够宽，一行能装下5个盒子就不会换行了*/
+.box ul{
+    width: 1225px;
+}
+
+.box ul li{
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.box ul li img{
+    width: 100%;
+}
+
+.box ul li h4{
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    /*不加粗*/
+    font-weight: 400;
+}
+
+.box-bd .info{
+    margin: 0px 20px 0px 25px;
+    font-size: 12px;
+    /*不加粗*/
+    font-weight: 400;
+    color:#999;
+}
+
+.box-bd .info span{
+    color:#ff7c2d;
+}
+
+/*ul 中 li 浮动后外层 div 高度变为了0，要加去除浮动。*/
+/*给父元素加一个伪类*/
+.clearfix:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/*底部区域开始了*/
+.footer{
+    height: 260px;
+    background-color: #F0F0F0;
+}
+
+.footer .w{
+    /*外边距合并只会影响margin,padding不会合并*/
+    padding-top: 35px;
+}
+
+.copyright{
+    float: left;
+}
+
+.copyright p{
+    font-size: 12px;
+    color:#666666;
+    margin:20px 0;
+}
+
+/*a属于行内元素，没有大小，要指定为块级元素*/
+.copyright .app{
+    display: block;
+    width: 118px;
+    height: 33px;
+    border:1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.links{
+    float: right;
+}
+
+.links dl{
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt a{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.links dl dd a{
+    font-size: 12px;
+    color: #333;
+}
+
