@@ -20,6 +20,19 @@
     margin: auto;
 }
 
+.fixed{
+    position: fixed;
+    /*走浏览器的一半*/
+    left: 50%;
+    top: 100px;
+    /*走版心 .w 的一半*/
+    margin-left: 600px;
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+
+}
+
 /*去除无序列表小圆点*/
 li{
     list-style: none;
@@ -313,6 +326,20 @@ a{
     height: 0;
     clear: both;
     visibility: hidden;
+}
+
+.clearfix li{
+    position: relative;
+}
+
+.clearfix li .hot{
+    position: absolute;
+    background-color: pink;
+    right: -2px;
+    width: 40px;
+    height: 20px;
+    font-size: 10px;
+    text-align: center;
 }
 
 /*底部区域开始了*/
