@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!--    v-clock指令用法:避免闪动-->
+    <!--    1. 提供样式-属性选择器-->
+    <!--    [v-clock]{-->
+    <!--    display:none;-->
+    <!--    }-->
+    <!--    2. 在插值表达式所在的标签中添加 v-cloak 指令-->
+    <!--    3. 背后原理：先通过样式隐藏内容，然后在内存中进行值的替换，替换好之后再显示最终的结果。-->
+
+<!--        数据绑定指令-->
+<!--        - v-text 填充纯文本（相比插值表达式更加简洁且无闪动问题）-->
+<!--        - v-html 填充 HTML 片段（存在安全问题,-->
+<!--    容易导致 XSS 跨站脚本攻击，只在本站内部数据可用，绝不用在第三方数据）-->
+<!--        - v-pre 填充原始信息（显示原始信息，跳过编译过程-分析编译过程）-->
+
+<!--    数据响应式-->
+<!--    v-once 显示内容之后不再具有响应式功能-->
+<!--    调试控制台 vm可以查看所有数据。 vm.msg=xxx，可以立马改变。-->
+
+<!--    双向数据绑定 v-model
+       <input type='text' v-model='uname'/>
+-->
+
+<!--    事件绑定-->
+<!--    - v-on-->
+<!--    <button v-on:click='num++'>点击变量+1</button>-->
+<!--    <div v-text="num" />-->
+<!--    - v-on 简写成@-->
+<!--    <button @click='num++'>点击变量+1</button>-->
+<!--    <div v-text="num" />-->
+
+</head>
+<body>
+<!--差值表达式：支持基本的计算操作-->
+<!--整个区域内的app，都可以使用对象msg-->
+<div id="app">
+    <div v-cloak>{{msg}}</div>
+    <div>{{msg + '-----' + 123}}</div>
+    <div>{{1 + 2}}</div>
+
+    <div v-text="msg"></div>
+
+    <div v-html="msgHtml"></div>
+
+<!--    看到原始数据，像转义，不对信息进行编译-->
+    <div v-pre>{{msg}}</div>
+
+    <div v-once>{{msg}}</div>
+
+    <input type="text" v-model="test"/>
+    <div v-text="test"></div>
+
+    <div>
+        <button @click="num++">点我</button>
+        <button @click='clickButton'>点我调用函数1</button>
+        <button @click='clickButton()'>点我调用函数2</button>
+    </div>
+    <div v-text='num'></div>
+
+</div>
+</body>
+</html>
+
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
+
+<script>
+
+    var vm = new Vue({
+        // 元素的挂在位置（值可以是CSS选择器或者DOM元素）
+        el: '#app',
+        // 模型数据（值是一个对象）
+        data: {
+            msg: 'Hello World',
+            msgHtml:'<h1>HTML</h1>',
+            test:'testZhao',
+            num:0
+        },
+        methods:{
+            clickButton:function (){
+                // 必须通过this来访问，this就是vm(vue)
+                console.log(this == vm)
+                this.num++;
+            }
+        }
+    });
+
+</script>
