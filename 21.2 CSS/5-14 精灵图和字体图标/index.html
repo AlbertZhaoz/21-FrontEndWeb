@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--精灵图-->
+<!--为了有效地减少服务器接收和发送请求的次数，提高页面的加载速度，出现了CSS精灵技术-->
+<!--（也称CSS Sprites)，核心原理是将网页中的一些小背景图像整合到一张大图中，-->
+<!--这样服务器只需要一次请求就可以了。 精灵技术主要针对背景图片使用。-->
+<!--移动背景图片位置， background-position-->
+
+<!--字体图标 iconfont-->
+<!--Whay?-->
+<!--展示的是图标，但是本质的文字。-->
+<!--轻量级：减少服务器请求压力-->
+<!--灵活性-->
+<!--兼容性：几乎兼容所有的浏览器-->
+<!--字体图标不能替代精灵技术，只能替换样式简单的。-->
+
+<!--How?-->
+<!--字体图标下载：[icomoon](http://icomoon.io) [阿里 iconfont 字体库](http://www.iconfont.cn)-->
+<!--字体图标引入：-->
+<!-- - 将字体压缩包解压后的 fonts 文件夹（为了兼容性，里面包含不同格式的字体文件）放置于根目录下-->
+<!-- - 打开压缩包里面的 style.css 从@font-face 复制到 block;}即可。-->
+<!-- - 点击 demo.html，复制字体代号，<span>字体代号</span>-->
+<!-- - 给 span 添加属性-->
+<!--span{-->
+<!--  font-family:'icommon';-->
+<!--}-->
+字体图标追加：
+把压缩包里面的 selection.json 重新上传，然后追加图标即可，下载并替换。
+
+
+<!--CSS 三角-->
+
+<!--CSS 用户界面样式-->
+
+<!--vertical-align 属性应用-->
+
+<!--溢出文字省略号显示-->
+
+<!--常见布局技巧-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  .box1{
+    width: 60px;
+    height: 60px;
+    margin:100px auto;
+    background:url("index.png") no-repeat;
+    background-position: -182px 0;
+  }
+  .box2{
+    width: 27px;
+    height: 25px;
+    margin:100px auto;
+    background:url("index.png");
+    background-position: -155px -106px;
+  }
+
+  @font-face {
+      font-family: 'icomoon';
+      src:  url('fonts/icomoon.eot?9ahum1');
+      src:  url('fonts/icomoon.eot?9ahum1#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?9ahum1') format('truetype'),
+      url('fonts/icomoon.woff?9ahum1') format('woff'),
+      url('fonts/icomoon.svg?9ahum1#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+  }
+
+  span{
+      font-family: 'icomoon';
+  }
+</style>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<span></span>
+</body>
+</html>
