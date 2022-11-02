@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>简单计算器</h1>
+  数值A:<input type="text" v-model="numA">
+  数值B:<input type="text" v-model="numB">
+  <button @click="AddNumber">计算</button>
+  <br>
+<!--  // 将结果绑定到显示-->
+  <span v-text="numTotal"></span>
+</div>
+</body>
+</html>
+
+<script>
+  var vm = new Vue({
+    el:'#app',
+    data:{
+      numA:'',
+      numB:'',
+      numTotal:''
+    },
+    methods:{
+      AddNumber:function(){
+        // 注意这里默认是字符串
+        this.numTotal = parseInt(this.numA)+ parseInt(this.numB);
+        console.log(this.numTotal);
+      }
+    }
+  });
+</script>
