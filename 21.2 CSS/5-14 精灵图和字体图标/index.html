@@ -25,8 +25,13 @@
 <!--span{-->
 <!--  font-family:'icommon';-->
 <!--}-->
-字体图标追加：
-把压缩包里面的 selection.json 重新上传，然后追加图标即可，下载并替换。
+
+<!--字体图标追加：-->
+<!--把压缩包里面的 selection.json 重新上传，然后追加图标即可，下载并替换。-->
+
+<!--三角制作-->
+<!--宽高为0，只要边框-->
+<!--三部分透明即可-->
 
 
 <!--CSS 三角-->
@@ -59,6 +64,14 @@
     background-position: -155px -106px;
   }
 
+  .box3{
+      width: 0;
+      height: 0;
+      /*10px来控制三角形的大小*/
+      border: 10px solid transparent;
+      border-top-color: pink;
+  }
+
   @font-face {
       font-family: 'icomoon';
       src:  url('fonts/icomoon.eot?9ahum1');
@@ -78,6 +91,7 @@
 <body>
 <div class="box1"></div>
 <div class="box2"></div>
+<div class="box3"></div>
 <span></span>
 </body>
 </html>
