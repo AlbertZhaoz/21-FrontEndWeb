@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!--  实现一个点击选项卡切换图片-->
+</head>
+<body>
+<div class="app">
+    <div class="clearfix">
+        <ul>
+            <li :class='currentIndex==index?"choosed":""' :key="index" v-for="(value,index) in list"
+                @click="clickLi(index,value.path)">{{value.title}}
+            </li>
+        </ul>
+    </div>
+    <div>
+        <img :src="urlImg">
+    </div>
+</div>
+</body>
+</html>
+
+<style>
+    .choosed {
+        background-color: orange;
+    }
+
+    imgNotChoosed {
+        display: none;
+    }
+
+    .app ul {
+        float: left;
+    }
+
+    .app ul li {
+        float: left;
+        list-style: none;
+        border: 1px solid black;
+        margin: 1px
+    }
+
+    /*父级添加 after 伪元素*/
+    .clearfix:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+</style>
+
+<script>
+    var vm = new Vue({
+        el: ".app",
+        data: {
+            currentIndex: 0,
+            urlImg: "img/img1.png",
+            list: [{
+                id: 1,
+                title: 'apple',
+                path: 'img/img1.png'
+            },
+                {
+                    id: 2,
+                    title: 'banana',
+                    path: 'img/img2.png'
+                },
+                {
+                    id: 3,
+                    title: 'orange',
+                    path: 'img/img3.png'
+                },
+            ]
+        },
+        methods: {
+            clickLi: function (index, path) {
+                this.currentIndex = index;
+                this.urlImg = path;
+            }
+        }
+    })
+</script>

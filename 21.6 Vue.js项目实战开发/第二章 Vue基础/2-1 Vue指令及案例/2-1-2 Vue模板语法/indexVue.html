@@ -24,6 +24,10 @@
 
 <!--    双向数据绑定 v-model
        <input type='text' v-model='uname'/>
+       v-model的底层代码实现原理:
+       // 这边直接在 @input 后面绑定的方法区写代码了
+       // 将 msg 参数变更为 $event.target.value
+       <input type="text" :value="msg" @input="msg=$event.target.value">
 -->
 
 <!--    事件绑定-->
@@ -43,6 +47,55 @@
 
 <!--自定义按键修饰符（通过事件对象获取）-->
 <!--    Vue.config.keyCodes.f1  == 112-->
+
+<!--    属性绑定 v-bind-->
+<!--    <a v-bind:href="url">跳转</a>-->
+<!--    缩写形式： <a :href="url">跳转</a>-->
+
+    样式绑定
+    class样式处理：左边是 CSS 样式类名 右边是变量激活标志位（true or false)
+    - 对象语法 <div v-bind:class="{active :isActive}"></div>
+    直接通过绑定对象的方式最符合后端开发工程师的思想
+    - 对象语法 <div v-bind:class="objClass"></div>
+
+    - 数组语法 <div v-bind:class="{activeClass,otherClass}"></div>
+    - 数组语法 <div v-bind:class="[activeClass,otherClass,{otherClass2:isOtherClass2}]"></div>
+
+    内联样式
+    左边是样式名 右边是变量 borderStyle:'1px solid blue'
+    <div :style="{border:borderStyle,width:widthStyle}"></div>
+    直接通过绑定对象的方式最符合后端开发工程师的思想
+    objStyles:{
+        border:'1px solid green',
+        width:'200px',
+        height:'100px'
+    }
+    <div :style="objStyles"></div>
+    绑定多个样式类
+    <div :style="[objStyles,OtherSytles]"></div>
+
+    分支循环结构
+    v-if v-else v-else-if v-show
+    score 是变量
+    <div v-if="score>=90">优秀</div>
+    <div v-else-if="score<90&&score>=80">良好</div>
+    <div v-else="score<80">一般</div>
+
+    <div v-show="flag">Test</div>
+
+    循环结构
+    <li v-for="item in list">{{item}}</li>
+    index 从 0 开始
+    <li v-for="(item,index) in list">{{item}} + '-----'+{{index}}</li>
+    key 的作用：帮助 Vue 区分不同的元素，从而提高性能
+    <li :key="item.id" v-for="(item,index) in list">{{item}} + '-----'+{{index}}</li>
+
+    遍历对象
+    对象值，对象key，index
+    <div v-for="{value,key,index} in obj"></div>
+
+    v-if v-for结合使用
+    <div v-if="value==13" v-for="(value,key,index) in obj"></div>
 
 </head>
 <body>
@@ -80,16 +133,63 @@
 <!--        两种方式都可以      -->
         <input type="text" @keyup.keya="pressF1($event)">
         <input type="text" @keyup.65="pressF1($event)">
-    </div>
-    <div v-text='num'></div>
+        <br>
+        <button @click="updateUrl">点我可以更换 a 标签 href 属性</button>
+        <a :href="url">我是 a 标签</a>
 
+        <br>
+        <div>下面是类绑定</div>
+<!--        这边的 active 是 CSS 属性选择器;isActive 是变量-->
+        <div :class="{active:isActive}"></div>
+        <button @click="clickActive">激活变量</button>
+
+        <div :class="objClass">我是通过类来绑定到类</div>
+        <button @click="UpdateObjClass">改变类绑定</button>
+
+        <div v-if="score>=90">优秀</div>
+        <div v-else-if="score<90&&score>=80">良好</div>
+        <div v-else="score<80">一般</div>
+
+        <div>我是水果
+            <ul>
+                <li v-for="item in fruits">{{item}}</li>
+            </ul>
+        </div>
+
+        <div>我是复杂水果
+            <ul>
+                <li v-for="item in myFruits">
+                    <span>{{item.ename}}</span>
+                    <span>{{item.cname}}</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </div>
 </body>
 </html>
 
 <style>
+    /*属性选择器*/
     [v-cloak] {
         display: none;
+    }
+
+    .active{
+        border:1px solid red;
+        width: 100px;
+        height: 100px;
+    }
+
+    .addBorder{
+        border:1px solid blueviolet;
+        width: 100px;
+        height: 100px;
+    }
+
+    .addBackground{
+        background-color: grey;
     }
 </style>
 
@@ -106,7 +206,25 @@
             msgHtml:'<h1>HTML</h1>',
             test:'testZhao',
             num:0,
-            pwd:''
+            pwd:'',
+            url:"https://www.baidu.com",
+            isActive:true,
+            objClass:{
+                addBorder:true,
+                addBackground:true
+            },
+            score:99,
+            fruits:['apple','orange','banana'],
+            myFruits:[{
+                ename:'apple',
+                cname:'苹果'
+            },{
+                ename:'orange',
+                cname:'橘子'
+            },{
+                ename:'banana',
+                cname:'香蕉'
+            }]
         },
         methods:{
             clickButton:function (){
@@ -124,6 +242,16 @@
             },
             pressF1:function (event){
                 console.log(event.keyCode)
+            },
+            updateUrl:function (){
+                 this.url = "https://www.github.com"
+            },
+            clickActive:function (){
+                this.isActive = !this.isActive;
+            },
+            UpdateObjClass:function (){
+                this.objClass.addBoder = !this.objClass.addBoder;
+                this.objClass.addBackground = !this.objClass.addBackground;
             }
         }
     });
