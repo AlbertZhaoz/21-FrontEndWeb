@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <form>
+        姓名:<input type="text" v-model="uname">
+        <br>
+        <!--    value 和 v-model -->
+        <!--    value的值就是v-model绑定的值-->
+        性别:
+        男<input type="radio" name="gender" :value="1" v-model="gender">
+        女<input type="radio" name="gender" :value="2" v-model="gender">
+
+        <div>
+            <span>年龄:</span>
+            <input type="number" v-model.number="age">
+        </div>
+
+        <div>
+            <span>爱好:</span>
+            篮球<input type="checkbox" name="bal" value="1" v-model="hobby">
+            足球<input type="checkbox" name="footbal" value="2" v-model="hobby">
+            唱歌<input type="checkbox" name="sing" value="3" v-model="hobby">
+        </div>
+
+        <div>
+            select 可以实现多选，加一个属性 multiple="true" 即可
+            加完需要将 job 传递为数组
+            <select v-model="job">
+                <option value="0">请选择职业....</option>
+                <option value="1">后端开发</option>
+                <option value="2">前端开发</option>
+                <option value="3">全栈开发</option>
+            </select>
+        </div>
+
+        <div>
+            <span>个人简介：</span>
+            <textarea v-model="description"></textarea>
+        </div>
+
+        <div>
+            <!--      需要禁用表单提交的默认刷新行为-->
+            <input type="submit" value="上传信息" @click.prevent="submitForm">
+        </div>
+
+    </form>
+</div>
+</body>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            uname: "defaultName",
+            gender: 1,
+            hobby: ["2", "3"],
+            job: "0",
+            description: "I'm albert",
+            age: ''
+        },
+        methods: {
+            submitForm: function () {
+                console.log(this.uname + "--"
+                    + this.gender + "--"
+                    + this.hobby + "--"
+                    + this.job + "--"
+                    + this.description + "--"
+                    + (this.age + 13) + "--"
+                )
+                ;
+                // 调用 ajax 提交方法
+            }
+        }
+    });
+</script>
+
+</html>
